@@ -7,7 +7,8 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "python.defaultInterpreterPath": "/opt/venv/bin/python"
+        "python.defaultInterpreterPath": "/opt/venv/bin/python",
+        "jupyter.defaultKernel": "workspace-venv"
       },
       "extensions": [
         "ms-python.python",
@@ -15,5 +16,6 @@
       ]
     }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "postCreateCommand": "echo 'source /opt/venv/bin/activate' >> ~/.bashrc && /opt/venv/bin/python -m ipykernel install --user --name workspace-venv --display-name 'Python 3.11 (Virtual Env)'"
 }
