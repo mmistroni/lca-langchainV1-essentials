@@ -5,6 +5,9 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /workspace
 
+# Install Git LFS system-wide
+RUN apt-get update && apt-get install -y git-lfs && git lfs install
+
 # Copy the requirements file from the python directory
 COPY python/requirements.txt ./python/
 
